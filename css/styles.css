@@ -1,0 +1,16 @@
+.button {
+  color: rgb(238, 235, 235);
+  background-color: rgb(36, 71, 2);
+  border: 2px solid rgb(36, 97, 36);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgb(80, 111, 21);
+}
+.button:focus {
+  background-color: rgb(175, 223, 86);
+}
+.button:active {
+  background-color: rgb(75, 118, 235);
+}
