@@ -1,3 +1,14 @@
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Poppins"),
+    url(../../genius-lesson-project-main/fonts/poppins-v20-latin-300.woff)
+      url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1),
+    url("trickster-outline.otf") format("opentype"),
+    url("trickster-outline.woff") format("woff");
+}
 :root {
   --color-primary-light: #afdf56;
   --color-primary-dark: #1f300e;
@@ -10,14 +21,51 @@
 }
 
 /* Base */
+* {
+  box-sizing: border-box;
+}
 body {
   color: var(--color-primary-dark);
+  margin: 0;
+  /* font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 400; */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+address {
+  font-style: normal;
 }
 ul {
   list-style-type: none;
 }
-
+.visually-hidden {
+  position: absolute;
+  top: auto;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.section {
+  padding: 48px 0;
+}
+/* button */
 .button {
+  padding: 12px 32px;
   color: rgb(238, 235, 235);
   background-color: var(--color-brand);
   border: 2px solid var(--color-primary-dark);
@@ -36,11 +84,28 @@ ul {
 
 .link {
   color: var(--color-link);
+  text-decoration: none;
 }
 .link:hover {
   color: var(--color-link-hover);
+  text-decoration: underline;
 }
 
 .header-navigator-up {
   background-color: var(--color-nav-up);
+}
+
+/* footer */
+.address-link {
+  color: var(--color-link);
+  font-size: 16px;
+  font-weight: 300;
+  text-decoration: none;
+}
+.address-link:hover {
+  color: var(--color-link-hover);
+}
+
+.address-copyright {
+  font-size: 14px;
 }

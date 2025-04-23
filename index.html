@@ -8,121 +8,151 @@
   </head>
   <body>
     <header>
-      <div>
-        <nav class="header-navigator-up">
+      <div class="container">
+        <div>
+          <nav class="header-navigator-up">
+            <ul>
+              <li><a class="link" href="#">About us</a></li>
+              <li><a class="link" href="#contact-section">Contact us</a></li>
+              <li><a class="link" href="">Payment and delivery</a></li>
+            </ul>
+            <ul>
+              <li><a class="link" href="">HEB</a></li>
+              <li><a class="link" href="">ENG</a></li>
+              <li><a class="link" href="">RU</a></li>
+            </ul>
+            <button class="button" type="button">Request a call</button>
+          </nav>
+        </div>
+        <nav>
           <ul>
-            <li><a class="link" href="#">About us</a></li>
-            <li><a class="link" href="#contact-section">Contact us</a></li>
-            <li><a class="link" href="">Payment and delivery</a></li>
+            <li>burger</li>
+            <li>
+              <a href="/"
+                ><img
+                  src="./images/logo.png"
+                  alt="Logo DailyFarm"
+                  width="100px"
+              /></a>
+            </li>
+            <li><input type="search" search /></li>
+            <li>cart</li>
+            <li>user</li>
           </ul>
-          <ul>
-            <li><a class="link" href="">HEB</a></li>
-            <li><a class="link" href="">ENG</a></li>
-            <li><a class="link" href="">RU</a></li>
-          </ul>
-          <button class="button" type="button">Request a call</button>
         </nav>
       </div>
-      <nav>
-        <ul>
-          <li>burger</li>
-          <li>
-            <a href="/"
-              ><img src="./images/logo.png" alt="Logo DailyFarm" width="100px"
-            /></a>
-          </li>
-          <li><input type="search" search /></li>
-          <li>cart</li>
-          <li>user</li>
-        </ul>
-      </nav>
     </header>
     <main>
-      <section>left</section>
-      <section>
-        right
-        <section>ad</section>
-        <section>
-          <ul>
-            <li>
-              <article>
-                <div>
-                  <img
-                    src="./images/goods/chicken-fillet.jpg"
-                    alt="Goods"
-                    width="150px"
-                  />
-                </div>
-                <div>title</div>
-                <div>price</div>
-              </article>
-            </li>
-            <li>
-              <article>
-                <div>
-                  <img
-                    src="./images/goods/chicken-fillet.jpg"
-                    alt="Goods"
-                    width="150px"
-                  />
-                </div>
-                <div>title</div>
-                <div>price</div>
-              </article>
-            </li>
-            <li>
-              <article>
-                <div>
-                  <img
-                    src="./images/goods/chicken-fillet.jpg"
-                    alt="Goods"
-                    width="150px"
-                  />
-                </div>
-                <div>title</div>
-                <div>price</div>
-              </article>
-            </li>
-          </ul>
-        </section>
-        <section id="contact-section">
-          <h2>How to <span>find us</span></h2>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d40582.569563588164!2d4.473744!3d50.5265327!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c22bd3505b62af%3A0x8c19dee7074863f6!2sRedebel%20sa-nv!5e0!3m2!1sru!2sil!4v1745338496336!5m2!1sru!2sil"
-            width="600"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </section>
+      <!-- возможно удалить -->
+      <section class="section visually-hidden">
+        left
+        <h2 class="visually-hidden">Main menu</h2>
+      </section>
+      <!-- ** -->
+
+      <section class="section">
+        <div class="container">
+          right
+          <section>
+            <h2 class="visually-hidden">Advertisement</h2>
+          </section>
+          <section>
+            <h2 class="visually-hidden">Goods</h2>
+            <ul>
+              <li>
+                <article>
+                  <div>
+                    <img
+                      src="./images/goods/chicken-fillet.jpg"
+                      alt="Goods"
+                      width="150px"
+                    />
+                  </div>
+                  <div>title</div>
+                  <div>price</div>
+                </article>
+              </li>
+              <li>
+                <article>
+                  <div>
+                    <img
+                      src="./images/goods/chicken-fillet.jpg"
+                      alt="Goods"
+                      width="150px"
+                    />
+                  </div>
+                  <div>title</div>
+                  <div>price</div>
+                </article>
+              </li>
+              <li>
+                <article>
+                  <div>
+                    <img
+                      src="./images/goods/chicken-fillet.jpg"
+                      alt="Goods"
+                      width="150px"
+                    />
+                  </div>
+                  <div>title</div>
+                  <div>price</div>
+                </article>
+              </li>
+            </ul>
+          </section>
+          <section id="contact-section">
+            <h2>How to <span>find us</span></h2>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d40582.569563588164!2d4.473744!3d50.5265327!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c22bd3505b62af%3A0x8c19dee7074863f6!2sRedebel%20sa-nv!5e0!3m2!1sru!2sil!4v1745338496336!5m2!1sru!2sil"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </section>
+        </div>
       </section>
     </main>
     <footer>
-      <a href="/"
-        ><img src="./images/logo.png" alt="Logo DailyFarm" width="100px"
-      /></a>
-      <ul>
-        <li><a class="link" href="#">About us</a></li>
-        <li><a class="link" href="#contact-section">Contact us</a></li>
-        <li><a class="link" href="">Payment and delivery</a></li>
-      </ul>
-      <address>
+      <div class="container">
+        <a href="/"
+          ><img src="./images/logo.png" alt="Logo DailyFarm" width="100px"
+        /></a>
         <ul>
-          <li><a href="tel:+380960000007">+ 38 (096) 000 00 07</a></li>
-          <li><a href="mailto:dailyfarm@gmail.com">dailyfarm@gmail.com</a></li>
-          <li>
-            <a href="https://maps.app.goo.gl/5mmKpuX42DyRRA7Q8" target="_blank">
-              Rue de Chassart 4, 6221 Fleurus, Belgium
-            </a>
-          </li>
-          <li><a href="#">facebook</a></li>
-          <li><a href="#">insta</a></li>
+          <li><a class="link" href="#">About us</a></li>
+          <li><a class="link" href="#contact-section">Contact us</a></li>
+          <li><a class="link" href="">Payment and delivery</a></li>
         </ul>
-        <a class="link" vhref="#" target="_blank">Privacy Policy</a>
-        <p class="footer__politic-protected">&copy; 2025 Data protected</p>
-      </address>
+        <address>
+          <ul>
+            <li>
+              <a class="address-link" href="tel:+380960000007"
+                >+ 38 (096) 000 00 07</a
+              >
+            </li>
+            <li>
+              <a class="address-link" href="mailto:dailyfarm@gmail.com"
+                >dailyfarm@gmail.com</a
+              >
+            </li>
+            <li>
+              <a
+                class="address-link"
+                href="https://maps.app.goo.gl/5mmKpuX42DyRRA7Q8"
+                target="_blank"
+              >
+                Rue de Chassart 4, 6221 Fleurus, Belgium
+              </a>
+            </li>
+            <li><a href="#">facebook</a></li>
+            <li><a href="#">insta</a></li>
+          </ul>
+          <a class="address-link" vhref="#" target="_blank">Privacy Policy</a>
+          <p class="address-copyright">&copy; 2025 Data protected</p>
+        </address>
+      </div>
     </footer>
   </body>
 </html>
