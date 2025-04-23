@@ -4,19 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <title>Daily FARM</title>
   </head>
   <body>
     <header>
-      <div class="container">
+      <div class="container1">
         <div>
-          <nav class="header-navigator-up">
-            <ul>
+          <nav class="header-navigator-top">
+            <ul class="header-menu">
               <li><a class="link" href="#">About us</a></li>
               <li><a class="link" href="#contact-section">Contact us</a></li>
               <li><a class="link" href="">Payment and delivery</a></li>
             </ul>
-            <ul>
+            <ul class="header-menu-lngv">
               <li><a class="link" href="">HEB</a></li>
               <li><a class="link" href="">ENG</a></li>
               <li><a class="link" href="">RU</a></li>
@@ -24,20 +28,30 @@
             <button class="button" type="button">Request a call</button>
           </nav>
         </div>
-        <nav>
-          <ul>
-            <li>burger</li>
-            <li>
-              <a href="/"
-                ><img
+        <nav class="header-navigator-search">
+          <ul class="header-container">
+            <li class="left">
+              <span>EZ</span>
+              <a href="/">
+                <img
                   src="./images/logo.png"
                   alt="Logo DailyFarm"
                   width="100px"
-              /></a>
+                />
+              </a>
             </li>
-            <li><input type="search" search /></li>
-            <li>cart</li>
-            <li>user</li>
+            <li class="center">
+              <div class="search-box">
+                <input type="search" placeholder="Search..." />
+                <button type="submit" aria-label="Search">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </li>
+            <li class="right">
+              <span>cart</span>
+              <span>user</span>
+            </li>
           </ul>
         </nav>
       </div>
@@ -52,15 +66,15 @@
 
       <section class="section">
         <div class="container">
-          right
+          <!-- right -->
           <section>
             <h2 class="visually-hidden">Advertisement</h2>
           </section>
           <section>
             <h2 class="visually-hidden">Goods</h2>
-            <ul>
-              <li>
-                <article>
+            <ul class="cards-list">
+              <li class="cards-item">
+                <article class="card">
                   <div>
                     <img
                       src="./images/goods/chicken-fillet.jpg"
@@ -72,8 +86,8 @@
                   <div>price</div>
                 </article>
               </li>
-              <li>
-                <article>
+              <li class="cards-item">
+                <article class="card">
                   <div>
                     <img
                       src="./images/goods/chicken-fillet.jpg"
@@ -85,8 +99,34 @@
                   <div>price</div>
                 </article>
               </li>
-              <li>
-                <article>
+              <li class="cards-item">
+                <article class="card">
+                  <div>
+                    <img
+                      src="./images/goods/chicken-fillet.jpg"
+                      alt="Goods"
+                      width="150px"
+                    />
+                  </div>
+                  <div>title</div>
+                  <div>price</div>
+                </article>
+              </li>
+              <li class="cards-item">
+                <article class="card">
+                  <div>
+                    <img
+                      src="./images/goods/chicken-fillet.jpg"
+                      alt="Goods"
+                      width="150px"
+                    />
+                  </div>
+                  <div>title</div>
+                  <div>price</div>
+                </article>
+              </li>
+              <li class="cards-item">
+                <article class="card">
                   <div>
                     <img
                       src="./images/goods/chicken-fillet.jpg"
@@ -100,58 +140,63 @@
               </li>
             </ul>
           </section>
-          <section id="contact-section">
-            <h2>How to <span>find us</span></h2>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d40582.569563588164!2d4.473744!3d50.5265327!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c22bd3505b62af%3A0x8c19dee7074863f6!2sRedebel%20sa-nv!5e0!3m2!1sru!2sil!4v1745338496336!5m2!1sru!2sil"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <section class="contact-section" id="contact-section">
+            <h2>How to find us</h2>
+            <div class="map-wrapper">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d40582.569563588164!2d4.473744!3d50.5265327!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c22bd3505b62af%3A0x8c19dee7074863f6!2sRedebel%20sa-nv!5e0!3m2!1sru!2sil!4v1745338496336!5m2!1sru!2sil"
+                width="350"
+                height="320"
+              >
+                style="border: 0" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" ></iframe
+              >
+            </div>
           </section>
         </div>
       </section>
     </main>
-    <footer>
+    <footer class="footer">
       <div class="container">
-        <a href="/"
-          ><img src="./images/logo.png" alt="Logo DailyFarm" width="100px"
-        /></a>
-        <ul>
-          <li><a class="link" href="#">About us</a></li>
-          <li><a class="link" href="#contact-section">Contact us</a></li>
-          <li><a class="link" href="">Payment and delivery</a></li>
-        </ul>
-        <address>
+        <div class="footer-container">
+          <a href="/"
+            ><img src="./images/logo.png" alt="Logo DailyFarm" width="100px"
+          /></a>
           <ul>
-            <li>
-              <a class="address-link" href="tel:+380960000007"
-                >+ 38 (096) 000 00 07</a
-              >
-            </li>
-            <li>
-              <a class="address-link" href="mailto:dailyfarm@gmail.com"
-                >dailyfarm@gmail.com</a
-              >
-            </li>
-            <li>
-              <a
-                class="address-link"
-                href="https://maps.app.goo.gl/5mmKpuX42DyRRA7Q8"
-                target="_blank"
-              >
-                Rue de Chassart 4, 6221 Fleurus, Belgium
-              </a>
-            </li>
-            <li><a href="#">facebook</a></li>
-            <li><a href="#">insta</a></li>
+            <li><a class="link" href="#">About us</a></li>
+            <li><a class="link" href="#contact-section">Contact us</a></li>
+            <li><a class="link" href="">Payment and delivery</a></li>
           </ul>
-          <a class="address-link" vhref="#" target="_blank">Privacy Policy</a>
-          <p class="address-copyright">&copy; 2025 Data protected</p>
-        </address>
+          <address>
+            <ul>
+              <li>
+                <a class="address-link" href="tel:+380960000007"
+                  >+ 38 (096) 000 00 07</a
+                >
+              </li>
+              <li>
+                <a class="address-link" href="mailto:dailyfarm@gmail.com"
+                  >dailyfarm@gmail.com</a
+                >
+              </li>
+              <li>
+                <a
+                  class="address-link"
+                  href="https://maps.app.goo.gl/5mmKpuX42DyRRA7Q8"
+                  target="_blank"
+                >
+                  Rue de Chassart 4, 6221 Fleurus, Belgium
+                </a>
+              </li>
+              <li><a href="#">facebook</a></li>
+              <li><a href="#">insta</a></li>
+            </ul>
+          </address>
+          <div class="footer-privacy">
+            <a class="address-link" vhref="#" target="_blank">Privacy Policy</a>
+            <p class="address-copyright">&copy; 2025 Data protected</p>
+          </div>
+        </div>
       </div>
     </footer>
   </body>
