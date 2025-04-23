@@ -14,7 +14,7 @@
   --color-primary-dark: #1f300e;
   --color-brand: #244702;
   --color-link: #2e7f1c;
-  --color-link-hover: #171769;
+  --color-link-hover: #0b0bee;
   --color-button-active: #2e2eb0;
   --color-button-hover: #2e7f1c;
   --color-main: #f5f5f5;
@@ -189,7 +189,7 @@ ul {
 .cards-item {
   flex-basis: calc(
     100%-70px / 5
-  ); /* 40px это если 3 элемента, потом пересчитать*/
+  ); /* 40px это если 3 элемента и gap=20, потом пересчитать*/
 }
 .cards-list {
   display: flex;
@@ -208,13 +208,13 @@ ul {
   margin-top: 1rem;
 }
 /* footer */
-.address-link {
-  color: var(--color-link);
+.footer-link {
+  color: var(--color-primary-dark);
   font-size: 16px;
   font-weight: 300;
   text-decoration: none;
 }
-.address-link:hover {
+.footer-link:hover {
   color: var(--color-link-hover);
 }
 
@@ -228,10 +228,11 @@ ul {
   background-size: cover;
   background-position: bottom center;
   /* text-shadow: 5px 5px 5px #ffffff; */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0);
+  text-shadow: 2px 2px 5px #62f90b;
 }
 .footer-container {
   display: flex;
-  justify-content: space-around;
-  padding: 20px;
+  justify-content: center;
+  padding: 50px;
+  gap: 40px;
 }
