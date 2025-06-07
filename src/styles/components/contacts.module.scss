@@ -1,0 +1,20 @@
+@use '/src/styles/utils/variables' as *;
+
+.contacts{
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 50px;
+  color: $color-brand;
+
+  &__mapWrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  &__address{
+    font-size: 18px;
+    font-weight: normal;
+  }
+}

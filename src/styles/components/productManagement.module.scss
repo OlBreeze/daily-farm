@@ -1,0 +1,25 @@
+.productManagement{
+  //padding: 30px;
+
+  button {
+    background: linear-gradient(to bottom, #fee79a 0%, #fec151 100%);
+    border: 1px solid #d69e31;
+    margin: 30px 10px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    color: #85592e;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(to bottom, #fec151 0%, #fee79a 100%);
+      box-shadow: 0 2px 5px #00000033;
+    }
+
+    &:disabled {
+      background: #00000033;
+      cursor: not-allowed;
+    }
+  }
+}

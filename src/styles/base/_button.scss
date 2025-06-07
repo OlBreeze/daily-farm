@@ -1,0 +1,24 @@
+@use '/src/styles/utils/variables' as *;
+
+.button {
+  margin-right: 24px;
+  padding: 4px 32px;
+  color: rgb(238, 235, 235);
+  background-color: $color-brand;
+  border: 2px solid $color-brand;
+  border-radius: 18px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-button-hover;
+  }
+  &:focus {
+    background-color: $color-primary-light;
+  }
+
+  &:active {
+    background-color: $color-button-active;
+  }
+}
+
+

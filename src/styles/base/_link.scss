@@ -1,0 +1,11 @@
+@use '/src/styles/utils/variables' as *;
+
+.link {
+  color: $color-link;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}

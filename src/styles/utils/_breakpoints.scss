@@ -1,0 +1,21 @@
+// Размеры для адаптивности
+$breakpoint-xs: 320px;   // Мобильные устройства
+$breakpoint-sm: 576px;   // Малые экраны (планшеты в портретной ориентации)
+$breakpoint-md: 768px;   // Средние экраны (планшеты в ландшафтной ориентации)
+$breakpoint-lg: 992px;   // Большие экраны (ноутбуки, десктопы)
+$breakpoint-xl: 1200px;  // Очень большие экраны (большие мониторы)
+
+/*
+
+
+.container {
+  width: 100%;
+  max-width: $breakpoint-lg;
+}
+
+@media (max-width: $breakpoint-md) {
+  .container {
+    max-width: 100%;
+  }
+}
+*/

@@ -1,0 +1,113 @@
+
+@use '/src/styles/utils/variables' as *;
+
+.header {
+  //background: #cccccc;
+  &__wrapper {
+    //padding: 16px;
+  }
+
+  &__nav_top {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    background-color: $color-main;
+    gap: 24px;
+  }
+&__activeLink{
+  color: $color-link-hover;  // например, синий цвет
+  font-weight: bold;
+  text-decoration: underline;
+}
+  &__menu {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+  }
+
+  &__lang {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__icon {
+    fill: $color-primary-dark;
+
+    &:hover {
+      fill: $color-primary-light;
+    }
+  }
+
+  /* header search */
+  &__nav_search {
+    background-color: $color-header-search;
+    height: 52px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    list-style: none;
+    gap: 1rem;
+
+
+    &_left,
+    &_center,
+    &_right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    &_centerSearchBox {
+      flex: 2;
+      align-items: center;
+      width: 100%;
+      max-width: 500px;
+
+
+    //&_searchBox {
+    //  display: flex;
+    //  align-items: center;
+    //  width: 100%;
+    //  max-width: 500px;
+
+      input[type="search"] {
+      //  flex: 1;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-right: none;
+        border-radius: 8px 0 0 8px;
+        outline: none;
+        font-size: 12px;
+        width: 90%;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        color: #084a21;
+        border: 1px solid #ccc;
+        background-color: #eee;
+        cursor: pointer;
+        border-left: none;
+        border-radius: 0 8px 8px 0;
+        font-size: 12px;
+        /* font-size: 1rem; */
+
+        i {
+          /* если хочешь стилизовать иконку отдельно, можно добавить сюда */
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
