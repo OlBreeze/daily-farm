@@ -5,7 +5,7 @@ import '../styles/main.scss';
 import Header from "@/components/header/Header";
 import Footer from "@/components/Footer";
 import {CartProvider} from "@/app/context/CartContext";
-import React from "react";
+import React, {Suspense} from "react";
 
 export const metadata: Metadata = {
     title: "Daily FARM",
@@ -22,7 +22,9 @@ export default function RootLayout({
         <body>
 
         <CartProvider>
-            <Header/>
+            <Suspense fallback={<div>Загрузка...</div>}>
+                <Header />
+            </Suspense>
                 <div className={"page-container"}>
                     {children}
                 </div>

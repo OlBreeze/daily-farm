@@ -2,6 +2,7 @@
 import styles from "@/styles/components/productManagement.module.scss";
 import {useRouter} from "next/navigation";
 import CardListPages from "@/components/cards/CardListPages";
+import {Suspense} from "react";
 
 
 const ProductManagementPage = () => {
@@ -13,7 +14,9 @@ const ProductManagementPage = () => {
     return (
         <div className={styles.productManagement}>
             <button  onClick={addNewItem}>Add new item</button>
-            <CardListPages tempIsAdmin = {true}/>
+            <Suspense fallback={<div>Загрузка карточек...</div>}>
+                <CardListPages tempIsAdmin={true} />
+            </Suspense>
         </div>
     );
 };

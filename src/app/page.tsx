@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import CardListPages from "@/components/cards/CardListPages";
 
 const Page = () => {
     return (
-        <CardListPages tempIsAdmin={false}/>
+        <Suspense fallback={<div>Загрузка карточек...</div>}>
+            <CardListPages tempIsAdmin={false} />
+        </Suspense>
     );
 };
 
