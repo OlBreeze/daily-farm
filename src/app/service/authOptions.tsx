@@ -1,7 +1,9 @@
-//import {NextAuthOptions} from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials";
+import { NextAuthOptions } from "next-auth"
+import { JWT } from "next-auth/jwt"
+import { Session } from "next-auth"
+import CredentialsProvider from "next-auth/providers/credentials"
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
     providers: [
         CredentialsProvider({
             name: "Credentials",
@@ -31,12 +33,14 @@ export const authOptions = {
     },
 
     callbacks: {
-        async session({ session, token }) {
-            session.user.id = token.sub;
-            session.user.role = token.role; // <-- добавляем роль
+        async session({ session, token }: { session: Session; token: JWT }) {
+            if (session.user) {
+                session.user.id = token.sub || "";
+                (session.user as any).role = token.role; // <-- добавляем роль
+            }
             return session;
         },
-        async jwt({ token, user }) {
+        async jwt({ token, user }: { token: JWT; user?: any }) {
             if (user) {
                 token.role = user.role; // <-- сохраняем роль в токен
                 token.accessToken = user.accessToken;  // из ответа сервера
@@ -44,8 +48,4 @@ export const authOptions = {
             return token;
         }
     }
-// session: {
-//     strategy: "jwt", // JWT сессии (рекомендуется для CredentialsProvider)
-// },
-
 }
