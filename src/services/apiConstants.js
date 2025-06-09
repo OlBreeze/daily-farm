@@ -2,10 +2,10 @@ export const BASE_API = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:808
 
 export const API_ROUTES = {
     REGISTER: `${BASE_API}/account/register`,
-    LOGIN: `${BASE_API}/login`,
-    LOGOUT: `${BASE_API}/logout`,
-    REFRESH:`${BASE_API}/refresh`,
-    AUTH_CHECK:`${BASE_API}/auth/check`,
+    LOGIN: `${BASE_API}/api/auth/login`,
+    LOGOUT: `${BASE_API}/api/auth/logout`,
+    REFRESH:`${BASE_API}/api/auth/refresh`,
+    AUTH_CHECK:`${BASE_API}/api/auth/check`,
 
     // 🔹 Products
     GET_ALL_PRODUCTS: `${BASE_API}/products`,

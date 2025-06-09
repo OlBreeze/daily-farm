@@ -3,9 +3,9 @@ import CardListPages from "@/components/cards/CardListPages";
 
 const Page = () => {
     return (
-        <Suspense fallback={<div>Загрузка карточек...</div>}>
+        // <Suspense fallback={<div>Загрузка карточек...</div>}>
             <CardListPages tempIsAdmin={false} />
-        </Suspense>
+        // </Suspense>
     );
 };
 

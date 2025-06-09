@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, {useState, useEffect} from "react";
 import {useRouter} from "next/navigation";
 import { useAuth } from '@/services/hooks/useAuth';
-import {API_ROUTES} from "@/services/apiConstants";
+import {API_ROUTES, BASE_API} from "@/services/apiConstants";
 
 const LoginPageAuth = () => {
     const router = useRouter();
@@ -22,7 +22,9 @@ const LoginPageAuth = () => {
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-
+        setError('');
+        setLoading(true);
+        console.log('BASE_API:', BASE_API);
         try {
             const res = await fetch(API_ROUTES.LOGIN, {
                 method: 'POST',
@@ -32,7 +34,7 @@ const LoginPageAuth = () => {
                 credentials: 'include',
                 body: JSON.stringify({ username, password }),
             });
-
+            console.log(res)
             if (res.ok) {
                 setIsAuthenticated(true);
                 setLoading(false);
@@ -47,6 +49,8 @@ const LoginPageAuth = () => {
 
         } catch (err) {
             setError('Ошибка при подключении к серверу');
+        } finally {
+            setLoading(false);
         }
     };
 

@@ -22,9 +22,9 @@ export default function RootLayout({
         <body>
 
         <CartProvider>
-            <Suspense fallback={<div>Загрузка...</div>}>
+            {/*<Suspense fallback={<div>Загрузка...</div>}>*/}
                 <Header />
-            </Suspense>
+            {/*</Suspense>*/}
                 <div className={"page-container"}>
                     {children}
                 </div>

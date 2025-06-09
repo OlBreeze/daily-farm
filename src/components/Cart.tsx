@@ -15,66 +15,69 @@ const Cart = () => {
     const handleCheckout = async () => {
         const orderRequest = {
             order: {
-                // userId: "6ee3b677-95b0-491e-828c-1e3f6927e990", // получим на бэкенде из токена
                 comment: "Комментарий к заказу 1",
-                //totalSum: totalSum
             },
             products: arrayCart.map(item => ({
                 productId: item.id,
                 price: item.price,
                 quantity: item.quantity,
                 comment: "comment 1",
-            }))
+            })),
         };
 
-      //  console.log(orderRequest);
-        const res = await authenticatedFetch(`${API_ROUTES.ADD_ORDER}`, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(orderRequest),
-            credentials:"include",
-        });
+        try {
+            const res = await authenticatedFetch(`${API_ROUTES.ADD_ORDER}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(orderRequest),
+                credentials: "include",
+            });
 
-        console.log(res);
-        console.log(res.status);
-        if (res.ok) {
-            clearAllCart();
-            router.push('/account/list-orders');
-        } else {
-            if (res.status === 401) {
-                router.push('/login');
-                return;
-            }
-            let errorMessage = 'Ошибка при оформлении заказа.';
+            console.log(res);
+            console.log(res.status);
 
-            try {
-                const errorData = await res.json(); // читаем тело ответа
-                if (errorData && errorData.message) {
-                    errorMessage = errorData.message; // используем сообщение с бэка
-                } else {
-                    // Если поле message отсутствует, можно посмотреть статус
-                    switch (res.status) {
-                        // case 401:
-                        //     errorMessage = 'Вы не авторизованы. Пожалуйста, войдите в аккаунт.';
-                        //     break;
-                        case 403:
-                            errorMessage = 'Доступ запрещён.';
-                            break;
-                        case 400:
-                            errorMessage = 'Некорректные данные.';
-                            break;
-                        case 500:
-                            errorMessage = 'Ошибка сервера. Попробуйте позже.';
-                            break;
+            if (res.ok) {
+                clearAllCart();
+                router.push('/account/list-orders');
+            } else {
+                let errorMessage = 'Ошибка при оформлении заказа.';
+
+                try {
+                    const errorData = await res.json(); // читаем тело ответа
+                    if (errorData && errorData.message) {
+                        errorMessage = errorData.message;
+                    } else {
+                        switch (res.status) {
+                            case 403:
+                                errorMessage = 'Доступ запрещён.';
+                                break;
+                            case 400:
+                                errorMessage = 'Некорректные данные.';
+                                break;
+                            case 500:
+                                errorMessage = 'Ошибка сервера. Попробуйте позже.';
+                                break;
+                        }
                     }
+                } catch {
+                    // JSON не распарсился — оставляем дефолт
                 }
-            } catch {
-                // Не удалось распарсить JSON — оставляем дефолтное сообщение
+
+                alert(errorMessage);
             }
 
-            alert(errorMessage);
+        } catch (error) {
+            // 👉 Это попадание сюда означает, что refresh не сработал и был вызван logout()
+            if (error instanceof Error && error.message === 'Authentication failed') {
+                console.log('Токен истёк, редирект на /login');
+                router.push('/login');
+            } else {
+                console.error('Непредвиденная ошибка:', error);
+                alert('Произошла ошибка. Попробуйте позже.');
+            }
         }
     };
+
 
     return (
         <div className="max-w-4xl mx-auto p-6">

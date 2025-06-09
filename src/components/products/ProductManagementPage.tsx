@@ -14,9 +14,9 @@ const ProductManagementPage = () => {
     return (
         <div className={styles.productManagement}>
             <button  onClick={addNewItem}>Add new item</button>
-            <Suspense fallback={<div>Загрузка карточек...</div>}>
+            {/*<Suspense fallback={<div>Загрузка карточек...</div>}>*/}
                 <CardListPages tempIsAdmin={true} />
-            </Suspense>
+            {/*</Suspense>*/}
         </div>
     );
 };

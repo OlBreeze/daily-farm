@@ -46,6 +46,10 @@ export const registerUser = async (userData: UserData) => {
 
 export const logout = async () => {
     try {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('justLoggedOut', 'true');
+        }
+
         await fetch(API_ROUTES.LOGOUT, {
             method: 'POST',
             credentials: 'include',
@@ -54,7 +58,7 @@ export const logout = async () => {
     } catch (error) {
         console.error('Ошибка при выходе:', error);
     } finally {
-        window.location.href = '/'; // ← редирект всегда
+       // window.location.href = '/'; // ← редирект всегда
     }
 };
 

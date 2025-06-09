@@ -80,7 +80,7 @@ export async function middleware(request: NextRequest) {
     }
 
 
-// Если дошли до сюда - токены невалидны
+// Если дошли сюда - токены невалидны
     if (isProtectedRoute(pathname)) {
         const response = NextResponse.redirect(new URL('/login', request.url));
         clearAuthCookies(response);
